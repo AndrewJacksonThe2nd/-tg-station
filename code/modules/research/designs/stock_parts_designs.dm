@@ -237,6 +237,50 @@
 	build_path = /obj/item/weapon/stock_parts/matter_bin/bluespace
 	category = list("Stock Parts")
 
+ // Toolsets
+
+/datum/design/toolbox_tier1
+	name = "Fully Stocked Toolbox"
+	desc = "A stock part used in the construction of various devices."
+	id = "toolbox_tier1"
+	req_tech = list("materials" = 1)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 500)
+	build_path = /obj/item/weapon/storage/toolbox/mechanical
+	category = list("Stock Parts","Machinery","initial")
+
+/datum/design/toolbox_tier2
+	name = "Advanced Toolbox"
+	desc = "A stock part used in the construction of various devices."
+	id = "toolbox_tier2"
+	req_tech = list("materials" = 3)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 500)
+	build_path = /obj/item/weapon/storage/toolbox/tier2
+	category = list("Stock Parts")
+
+/datum/design/toolbox_tier3
+	name = "Super Toolbox"
+	desc = "A stock part used in the construction of various devices."
+	id = "toolbox_tier3"
+	req_tech = list("materials" = 5)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 500)
+	reliability = 75
+	build_path = /obj/item/weapon/storage/toolbox/tier3
+	category = list("Stock Parts")
+
+/datum/design/toolbox_tier4
+	name = "Bluespace Toolbox"
+	desc = "A stock part used in the construction of various devices."
+	id = "toolbox_tier4"
+	req_tech = list("materials" = 6)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 500, MAT_DIAMOND = 200)
+	reliability = 75
+	build_path = /obj/item/weapon/storage/toolbox/tier4
+	category = list("Stock Parts")
+
 //T-Comms devices
 /datum/design/subspace_ansible
 	name = "Subspace Ansible"

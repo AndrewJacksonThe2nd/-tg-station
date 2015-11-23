@@ -34,6 +34,22 @@
 	playsound(loc, 'sound/weapons/genhit.ogg', 50, 1, -1)
 	return (BRUTELOSS)
 
+/obj/item/weapon/wrench/tier2
+	name = "advanced wrench"
+	icon_state = "wrench_t2"
+	toolspeed = 2
+
+/obj/item/weapon/wrench/tier3
+	name = "super wrench"
+	icon_state = "wrench_t3"
+	toolspeed = 3
+
+/obj/item/weapon/wrench/tier4
+	name = "bluespace wrench"
+	icon_state = "wrench_t4"
+	toolspeed = 4
+
+
 /*
  * Screwdriver
  */
@@ -53,6 +69,25 @@
 	attack_verb = list("stabbed")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	toolspeed = 1
+	var/ignore_color_gen = 0
+
+/obj/item/weapon/screwdriver/tier2
+	name = "advanced screwdriver"
+	icon_state = "screwdriver_t2"
+	toolspeed = 2
+	ignore_color_gen = 1
+
+/obj/item/weapon/screwdriver/tier3
+	name = "super screwdriver"
+	icon_state = "screwdriver_t3"
+	toolspeed = 3
+	ignore_color_gen = 1
+
+/obj/item/weapon/screwdriver/tier4
+	name = "bluespace screwdriver"
+	icon_state = "screwdriver_t4"
+	toolspeed = 4
+	ignore_color_gen = 1
 
 /obj/item/weapon/screwdriver/suicide_act(mob/user)
 	user.visible_message(pick("<span class='suicide'>[user] is stabbing the [src.name] into \his temple! It looks like \he's trying to commit suicide.</span>", \
@@ -60,6 +95,11 @@
 	return(BRUTELOSS)
 
 /obj/item/weapon/screwdriver/New(loc, var/param_color = null)
+	if (prob(75))
+		src.pixel_y = rand(0, 16)
+
+	if(ignore_color_gen)
+		return
 	if(!param_color)
 		param_color = pick("red","blue","purple","brown","green","cyan","yellow")
 
@@ -85,9 +125,6 @@
 		if ("yellow")
 			icon_state = "screwdriver7"
 			item_state = "screwdriver_yellow"
-
-	if (prob(75))
-		src.pixel_y = rand(0, 16)
 	return
 
 /obj/item/weapon/screwdriver/attack(mob/living/carbon/M, mob/living/carbon/user)
@@ -117,9 +154,30 @@
 	attack_verb = list("pinched", "nipped")
 	hitsound = 'sound/items/Wirecutter.ogg'
 	toolspeed = 1
+	var/ignore_color_gen = 0
+
+/obj/item/weapon/wirecutters/tier2
+	name = "advanced wirecutters"
+	icon_state = "cutters_t2"
+	toolspeed = 2
+	ignore_color_gen = 1
+
+/obj/item/weapon/wirecutters/tier3
+	name = "super wirecutters"
+	icon_state = "cutters_t3"
+	toolspeed = 3
+	ignore_color_gen = 1
+
+/obj/item/weapon/wirecutters/tier4
+	name = "bluespace wirecutters"
+	icon_state = "cutters_t4"
+	toolspeed = 4
+	ignore_color_gen = 1
 
 /obj/item/weapon/wirecutters/New(loc, var/param_color = null)
 	..()
+	if(ignore_color_gen)
+		return
 	if((!param_color && prob(50)) || param_color == "yellow")
 		icon_state = "cutters-y"
 		item_state = "cutters_yellow"
@@ -169,6 +227,28 @@
 	var/light_intensity = 2 //how powerful the emitted light is when used.
 	heat = 3800
 	toolspeed = 1
+
+/obj/item/weapon/weldingtool/tier2
+	name = "advanced welding tool"
+	icon_state = "welder_t2"
+	toolspeed = 2
+	max_fuel = 40
+
+/obj/item/weapon/weldingtool/tier3
+	name = "super welding tool"
+	desc = "Specialty hardware designed to lessen the brightness while welding faster with more storage of fuel."
+	icon_state = "welder_t3"
+	toolspeed = 3
+	max_fuel = 60
+	light_intensity = 1
+
+/obj/item/weapon/weldingtool/tier4
+	name = "bluespace arc welder"
+	desc = "Comes with a welding protection screen."
+	icon_state = "welder_t4"
+	toolspeed = 4
+	max_fuel = 80
+	light_intensity = 0
 
 /obj/item/weapon/weldingtool/New()
 	..()
@@ -471,6 +551,21 @@
 	origin_tech = "engineering=1"
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	toolspeed = 1
+
+/obj/item/weapon/crowbar/tier2
+	name = "nanotech crowbar"
+	icon_state = "crowbar_t2"
+	toolspeed = 2
+
+/obj/item/weapon/crowbar/tier3
+	name = "picotech crowbar"
+	icon_state = "crowbar_t3"
+	toolspeed = 3
+
+/obj/item/weapon/crowbar/tier4
+	name = "bluespace crowbar"
+	icon_state = "crowbar_t4"
+	toolspeed = 4
 
 /obj/item/weapon/crowbar/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is beating \himself to death with the [src.name]! It looks like \he's trying to commit suicide.</span>")

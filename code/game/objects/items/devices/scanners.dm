@@ -18,6 +18,22 @@ MASS SPECTROMETER
 	item_state = "electronic"
 	materials = list(MAT_METAL=150)
 	origin_tech = "magnets=1;engineering=1"
+	var/search_range = 2
+
+/obj/item/device/t_scanner/tier2
+	name = "\improper advanced t-ray scanner"
+	icon_state = "t-ray_t2_0"
+	search_range = 3
+
+/obj/item/device/t_scanner/tier3
+	name = "\improper super t-ray scanner"
+	icon_state = "t-ray_t3_0"
+	search_range = 4
+
+/obj/item/device/t_scanner/tier4
+	name = "\improper bluespace t-ray scanner"
+	icon_state = "t-ray_t4_0"
+	search_range = 5
 
 /obj/item/device/t_scanner/attack_self(mob/user)
 
@@ -44,7 +60,7 @@ MASS SPECTROMETER
 
 /obj/item/device/t_scanner/proc/scan()
 
-	for(var/turf/T in range(2, src.loc) )
+	for(var/turf/T in range(search_range, src.loc) )
 		for(var/obj/O in T.contents)
 
 			if(O.level != 1)

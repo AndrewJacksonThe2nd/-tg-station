@@ -48,6 +48,7 @@
 	new /obj/item/device/analyzer(src)
 	new /obj/item/weapon/wirecutters(src)
 
+
 /obj/item/weapon/storage/toolbox/electrical
 	name = "electrical toolbox"
 	icon_state = "yellow"
@@ -105,3 +106,62 @@
 /obj/item/weapon/storage/toolbox/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] robusts \himself with the toolbox! It looks like \he's trying to commit suicide..</span>")
 	return (BRUTELOSS)
+
+/obj/item/weapon/storage/toolbox/tier2
+	name = "advanced toolbox"
+	icon_state = "toolbox_t2"
+	item_state = "toolbox_blue"
+	max_combined_w_class = 28
+	storage_slots = 14
+/obj/item/weapon/storage/toolbox/tier2/New()
+	..()
+	var/color = pick("red","yellow","green","blue","pink","orange","cyan","white")
+	new /obj/item/weapon/screwdriver/tier2(src)
+	new /obj/item/weapon/wrench/tier2(src)
+	new /obj/item/weapon/weldingtool/tier2(src)
+	new /obj/item/weapon/crowbar/tier2(src)
+	new /obj/item/weapon/wirecutters/tier2(src)
+	new /obj/item/device/t_scanner/tier2(src)
+	new /obj/item/stack/cable_coil(src,30,color)
+	new /obj/item/stack/cable_coil(src,30,color)
+
+/obj/item/weapon/storage/toolbox/tier3
+	name = "super toolbox"
+	icon_state = "toolbox_t3"
+	item_state = "toolbox_blue"
+	max_combined_w_class = 28
+	storage_slots = 14
+
+/obj/item/weapon/storage/toolbox/tier3/New()
+	..()
+	var/color = pick("red","yellow","green","blue","pink","orange","cyan","white")
+	new /obj/item/weapon/screwdriver/tier3(src)
+	new /obj/item/weapon/wrench/tier3(src)
+	new /obj/item/weapon/weldingtool/tier3(src)
+	new /obj/item/weapon/crowbar/tier3(src)
+	new /obj/item/weapon/wirecutters/tier3(src)
+	new /obj/item/device/t_scanner/tier3(src)
+	new /obj/item/stack/cable_coil(src,30,color)
+	new /obj/item/stack/cable_coil(src,30,color)
+	new /obj/item/stack/cable_coil(src,30,color)
+
+/obj/item/weapon/storage/toolbox/tier4
+	name = "bluespace toolbox"
+	icon_state = "toolbox_t4"
+	item_state = "toolbox_blue"
+	max_combined_w_class = 28
+	storage_slots = 14
+
+/obj/item/weapon/storage/toolbox/tier4/New()
+	..()
+	var/color = pick("red","yellow","green","blue","pink","orange","cyan","white")
+	new /obj/item/weapon/screwdriver/tier4(src)
+	new /obj/item/weapon/wrench/tier4(src)
+	new /obj/item/weapon/weldingtool/tier4(src)
+	new /obj/item/weapon/crowbar/tier4(src)
+	new /obj/item/weapon/wirecutters/tier4(src)
+	new /obj/item/device/t_scanner/tier4(src)
+	new /obj/item/stack/cable_coil(src,30,color)
+	new /obj/item/stack/cable_coil(src,30,color)
+	new /obj/item/stack/cable_coil(src,30,color)
+	new /obj/item/stack/cable_coil(src,30,color)
