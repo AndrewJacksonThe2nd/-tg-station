@@ -154,6 +154,13 @@
 	category = "Defensive"
 	cost = 1
 
+/datum/spellbook_entry/tensioners_floating_disk
+	name = "Force Wall"
+	spell_type = /obj/effect/proc_holder/spell/aoe_turf/conjure/floating_disk
+	log_name = "FW"
+	category = "Defensive"
+	cost = 1
+
 /datum/spellbook_entry/blink
 	name = "Blink"
 	spell_type = /obj/effect/proc_holder/spell/targeted/turf_teleport/blink
